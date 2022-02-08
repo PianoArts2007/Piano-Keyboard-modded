@@ -1,0 +1,38 @@
+﻿<Window x:Class="PianoKeyboard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PianoKeyboard"
+        mc:Ignorable="d"
+        Title="Ced's PianoKeyboard"
+        Height="196" Width="500"
+        MinHeight="196" MinWidth="500"
+        MaxHeight="196" MaxWidth="1140" SizeToContent="Height">
+    <Grid>
+        <Grid>
+            <Menu Height="18" VerticalAlignment="Top">
+                <MenuItem Header="File" Click="MenuItem_Click">
+					<MenuItem x:Name="Open" Header="Open MIDI" Click="OpenItem_Click" Margin="0,0,-3,0"/>
+                    <Separator/>
+                    <MenuItem x:Name="SettingItem" Header="Setting" Click="SettingItem_Click"/>
+                    <Separator/>
+                    <MenuItem x:Name="ExitItem" Header="Exit" Click="ExitItem_Click"/>
+                    </MenuItem>
+                <MenuItem Header="Help">
+                    <MenuItem x:Name="ReadmeItem" Header="Readme" Click="ReadmeItem_Click"/>
+                    <MenuItem x:Name="AboutItem" Header="About" Click="AboutItem_Click"/>
+                </MenuItem>
+            </Menu>
+            <ScrollViewer x:Name="KeyboardScroll" CanContentScroll="True" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" Margin="0,18,0,22" Focusable="False">
+                <Grid x:Name="Keyboard">
+                    <Canvas x:Name="WhiteGrid"></Canvas>
+                    <Canvas x:Name="BlackGrid"></Canvas>
+                </Grid>
+            </ScrollViewer>
+            <StatusBar VerticalAlignment="Bottom" >
+                <StatusBarItem x:Name="TransposeItam" Content="Transpose: 0" VerticalAlignment="Top"/>
+            </StatusBar>
+        </Grid>
+    </Grid>
+</Window>
